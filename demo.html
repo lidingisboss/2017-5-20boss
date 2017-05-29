@@ -1,1 +1,57 @@
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>选项卡</title>
+<style type="text/css">
+  #div1 .active{
+     background:#FFFF00;
+  }
+  #div1 div{
+     width:100px;
+	 height:100px;
+	 border:1px solid #CC0000;
+	 display:none;
+  }
+
+</style>
+	<script type="text/javascript">
+	   window.onload=function(){
+	      var odiv = document.getElementById("div1");
+		  var obtn = odiv.getElementsByTagName("input");
+		  var adiv = odiv.getElementsByTagName("div");
+		 
+		  for(var i=0;i<obtn.length;i++){
+		       obtn[i].index=i;
+		     obtn[i].onmouseover=function(){
+			    for(var i=0;i<obtn.length;i++){
+				  obtn[i].className="";
+				   adiv[i].style.display="none";
+				
+				}
+			      this.className="active";
+				  adiv[this.index].style.display="block";
+			      
+			 }
+		  
+		  }
+	   }
+	</script>
+</head>
+
+<body>
+	<div id="div1">
+	   <input type="button" value="新闻"  class="active"/>
+	   <input type="button" value="教育" />
+	   <input type="button" value="培训" />
+	   <input type="button" value="出国" />
+	   <div style="display:block;">11111</div>
+	   <div>22222</div>
+	   <div>33333</div>
+	   <div>44444</div>
+	
+	</div>
+
+</body>
+</html>
